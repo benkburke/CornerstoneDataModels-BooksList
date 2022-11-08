@@ -5,4 +5,15 @@ export default class HttpGateway {
 
     return booksDto;
   };
+
+  post = async (path, body) => {
+    console.log("data", JSON.stringify(body));
+    await fetch(path, {
+      body: JSON.stringify(body),
+      headers: {
+        "Content-Type": "application/json",
+      },
+      method: "POST",
+    });
+  };
 }

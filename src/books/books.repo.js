@@ -15,6 +15,16 @@ class BooksRepository {
 
     return booksPm;
   };
+
+  addBook = async () => {
+    await this.httpGateway.post(
+      "https://api.logicroom.co/api/bburke@greencheckverified.com/books",
+      {
+        name: "my private book",
+        author: "my private author",
+      }
+    );
+  };
 }
 
 const booksRepository = new BooksRepository();
